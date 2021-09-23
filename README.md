@@ -4,13 +4,12 @@ This project involves generating a randomized password for the user. The program
 
 ## To-do list
 
-* Ask user for password length
 * Generate random password
+* make the cancel button on user prompt not error out
 
 # Possible improvements
 
-* Copy button that shows up next to the generate password after it's been made
-* make the cancel button on user prompt not error out
+* Copy button that shows up next to the generate password after it's been made which copies to clipboard on click
 
 ## Deployed Link
 

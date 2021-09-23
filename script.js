@@ -18,8 +18,12 @@ function writePassword() {
 
     function generatePassword(){
       var passwordType = [];                                //initializes an array to put the character sets that the user has chosen
-      getPasswordType(charSet, passwordType);
-      console.log(passwordType)
+      getPasswordType(charSet, passwordType);               //calls the getPasswordType() function to get the user's choice of character sets, returns a populated array with those choices
+      var passwordLength = getPasswordLength();             //initializes a variable called passwordLength and sets it equal to the value returned by getPasswordLength()
+      console.log(passwordType);
+      console.log(passwordLength);
+
+
     };
 
     function getPasswordType(allChar, userChar){
@@ -42,10 +46,18 @@ function writePassword() {
       if(userChar.length === 0){                                                        //checks if the array is emplty and if it is, recursively calls the function again
         alert("Error: you didn't chose any characters, please choose 'yes' or 'y' for at least one option");
         getPasswordType(allChar, userChar);
-      }
+      };
     };
 
-}
+    function getPasswordLength(){                                     //prompts the user for a password length
+      var userData = parseInt(prompt("How long do you want your password to be? Enter a number between 8 and 128","enter a number between 8 and 128")); //parses the user data into an integer or returns NaN if the user failed to enter a number
+      if(isNaN(userData) || (userData < 8 || userData > 128)){                                              //checks if the user entered faulty data (either NaN or a value outside of the 8-128 range)              
+        alert("Error: Either that wasn't between 8 and 128 or that wasn't even a number");
+        getPasswordLength();                                            // if the user did enter faulty data, the function recurssively calls itself
+      }
+    }
+
+};
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
