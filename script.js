@@ -22,8 +22,11 @@ function writePassword() {
       var passwordLength = getPasswordLength();             //initializes a variable called passwordLength and sets it equal to the value returned by getPasswordLength()
       console.log(passwordType);
       console.log(passwordLength);
-
-
+      var brandNewPassword = "";
+      for(var i = 0; i < passwordLength; i++){              // for each character in the password, populate the string with a randomly chosen index of the passwordType array.
+        brandNewPassword += passwordType[Math.floor(Math.random() * passwordType.length)];
+      }
+      return brandNewPassword; // returns the newly generated password
     };
 
     function getPasswordType(allChar, userChar){
@@ -55,6 +58,7 @@ function writePassword() {
         alert("Error: Either that wasn't between 8 and 128 or that wasn't even a number");
         getPasswordLength();                                            // if the user did enter faulty data, the function recurssively calls itself
       }
+      return userData;
     }
 
 };

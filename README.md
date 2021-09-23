@@ -4,12 +4,13 @@ This project involves generating a randomized password for the user. The program
 
 ## To-do list
 
-* Generate random password
-* make the cancel button on user prompt not error out
+* Final checks, touch ups
+* add gif of working project (show the errors along the way)
 
 # Possible improvements
 
 * Copy button that shows up next to the generate password after it's been made which copies to clipboard on click
+* make the cancel button on user prompt not error out
 
 ## Deployed Link
 
