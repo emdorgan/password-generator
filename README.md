@@ -4,8 +4,13 @@ This project involves generating a randomized password for the user. The program
 
 ## To-do list
 
-* Write pseudocode
-* 
+* Ask user for password length
+* Generate random password
+
+# Possible improvements
+
+* Copy button that shows up next to the generate password after it's been made
+* make the cancel button on user prompt not error out
 
 ## Deployed Link
 
