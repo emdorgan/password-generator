@@ -2,9 +2,14 @@
 
 This project involves generating a randomized password for the user. The program prompts the user for a character length (between 8 and 125) and outputs a randomized password of the desired length.
 
+## To-do list
+
+* Write pseudocode
+* 
+
 ## Deployed Link
 
-* [See Live Site](#)
+* [See Live Site](https://emdorgan.github.io/password-generator/)
 
 
 ## Built With
@@ -16,12 +21,9 @@ This project involves generating a randomized password for the user. The program
 
 ## Authors
 
-* **YOUR NAME** 
+* **Emily Dorgan** 
 
-- [Link to Portfolio Site](#)
-- [Link to Github](https://github.com/)
-- [Link to LinkedIn](https://www.linkedin.com/)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+- [Link to Github](https://github.com/emdorgan)
+- [Link to LinkedIn](https://www.linkedin.com/in/emily-dorgan/)
 
 ## Acknowledgments
