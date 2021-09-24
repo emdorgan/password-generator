@@ -1,6 +1,7 @@
 # Password Generator
 
-This project involves generating a randomized password for the user. The program prompts the user for a character length (between 8 and 125) and outputs a randomized password of the desired length.
+This project involves generating a randomized password for the user. The program asks the user if they want to include uppercase, lowercase, number & special characters in their password.
+then it asks how long the user wants the password to be (between 8-12) and then randomly generates the desired password for the user.
 
 ## To-do list
 
@@ -10,7 +11,6 @@ This project involves generating a randomized password for the user. The program
 # Possible improvements
 
 * Copy button that shows up next to the generate password after it's been made which copies to clipboard on click
-* make the cancel button on user prompt not error out
 
 ## Deployed Link
 
