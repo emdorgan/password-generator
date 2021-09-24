@@ -5,7 +5,7 @@ then it asks how long the user wants the password to be (between 8-12) and then 
 
 ## To-do list
 
-* Final checks, touch ups
+* Allow for the user to stop pass generation if they hit cancel on the length prompt
 * add gif of working project (show the errors along the way)
 
 # Possible improvements

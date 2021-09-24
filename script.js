@@ -39,15 +39,17 @@ function writePassword() {
       var passwordType = [];                                //initializes an array to put the character sets that the user has chosen
       var brandNewPassword = "";
       getPasswordType(charSet, passwordType);               //calls the getPasswordType() function to get the user's choice of character sets, returns a populated array with those choices
+      console.log(passwordType);
       if(passwordType.length !== 0){
-        var passwordLength = getPasswordLength();             //initializes a variable called passwordLength and sets it equal to the value returned by getPasswordLength()
+        var passwordLength = getPasswordLength();               //initializes a variable called passwordLength, then calls the getPasswordLength function, passing passwordLength through it
+        console.log(passwordLength);
         for(var i = 0; i < passwordLength; i++){              // for each character in the password, populate the string with a randomly chosen index of the passwordType array.
           brandNewPassword += passwordType[Math.floor(Math.random() * passwordType.length)];
         }
       }
       return brandNewPassword; // returns the newly generated password
     };
-
+  };
     function getPasswordType(allChar, userChar){
       var promptAnswer = prompt("Would you like to use uppercase characters? (y=yes/n=no)"); //prompts the user for if they wanna use uppercase 
       if(promptAnswer !== null){                                                            // checks to make sure the user did NOT hit cancel on the prompt which would return null
@@ -56,7 +58,7 @@ function writePassword() {
         };
       }
       else{
-        return;         //breaks out of the function if the user clicks on the cancel button
+        return userChar.splice(0, userChar.length);         //clears the array and breaks out of the function if the user clicks on the cancel button
       };
       promptAnswer = prompt("Would you like to use lowercase characters? (y=yes/n=no)"); // repeat the above steps for all 4 sub arrays
       if(promptAnswer !== null){
@@ -65,7 +67,7 @@ function writePassword() {
         };
       }
       else{
-        return;
+        return userChar.splice(0, userChar.length);
       };
       promptAnswer = prompt("Would you like to use numbers? (y=yes/n=no)");
       if(promptAnswer !== null){
@@ -74,7 +76,7 @@ function writePassword() {
         };
       }
       else{
-        return;
+        return userChar.splice(0, userChar.length);
       };
       promptAnswer = prompt("Would you like to use special characters? (y=yes/n=no)");
       if(promptAnswer !== null){
@@ -83,7 +85,7 @@ function writePassword() {
         };
       }
       else{
-        return;
+        return userChar.splice(0, userChar.length);
       };
       if(userChar.length === 0){                                                        //checks if the array is emplty (i.e. user didn't select any of the 4 sub arrays)
         alert("Error: no character sets chosen, please choose 'yes' or 'y' for at least one option"); // informs the user that they didn't chose any character set and
@@ -91,21 +93,18 @@ function writePassword() {
       };
     };
 
-    function getPasswordLength(){                                                                                                       //prompts the user for a password length
-      var userData = parseInt(prompt("How long do you want your password to be? Enter a number between 8 and 128","enter a number between 8 and 128")); //parses the user data into an integer or returns NaN if the user failed to enter a number
-      if (userData !== null){
-        if(isNaN(userData) || (userData < 8 || userData > 128)){                                                                                    //checks if the user entered faulty data (either NaN or a value outside of the 8-128 range)
+    function getPasswordLength(){                                                                                                      //prompts the user for a password length
+      passwordLength = parseInt(prompt("How long do you want your password to be? Enter a number between 8 and 128","enter a number between 8 and 128")); //parses the user data into an integer or returns NaN if the user failed to enter a number
+      console.log(passwordLength);                                                                                                                       // checks to if the user did NOT hit cancel
+        if(isNaN(passwordLength) || (passwordLength < 8 || passwordLength > 128)){                                                                                    //checks if the user entered faulty data (either NaN or a value outside of the 8-128 range)
           alert("Error: Either that wasn't between 8 and 128 or that wasn't even a number");
-          getPasswordLength();                                                                                                                // if the user did enter faulty data, the function recurssively calls itself
+          console.log(passwordLength);
+          getPasswordLength();                                                                                                             // if the user did enter faulty data, the function recurssively calls itself
         }
-      return userData;
-      }
-      else{
-        return;
-      };
+        console.log(passwordLength)
+        return passwordLength;
+        
     };
-
-};
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
