@@ -39,10 +39,8 @@ function writePassword() {
       var passwordType = [];                                //initializes an array to put the character sets that the user has chosen
       var brandNewPassword = "";
       getPasswordType(charSet, passwordType);               //calls the getPasswordType() function to get the user's choice of character sets, returns a populated array with those choices
-      console.log(passwordType);
       if(passwordType.length !== 0){
         var passwordLength = getPasswordLength();               //initializes a variable called passwordLength, then calls the getPasswordLength function, passing passwordLength through it
-        console.log(passwordLength);
         for(var i = 0; i < passwordLength; i++){              // for each character in the password, populate the string with a randomly chosen index of the passwordType array.
           brandNewPassword += passwordType[Math.floor(Math.random() * passwordType.length)];
         }
@@ -94,16 +92,18 @@ function writePassword() {
     };
 
     function getPasswordLength(){                                                                                                      //prompts the user for a password length
-      passwordLength = parseInt(prompt("How long do you want your password to be? Enter a number between 8 and 128","enter a number between 8 and 128")); //parses the user data into an integer or returns NaN if the user failed to enter a number
-      console.log(passwordLength);                                                                                                                       // checks to if the user did NOT hit cancel
+      passwordLength = prompt("How long do you want your password to be? Enter a number between 8 and 128","enter a number between 8 and 128"); //parses the user data into an integer or returns NaN if the user failed to enter a number
+      if(passwordLength !== null){                                                                                          // checks to make sure that the user didn't hit cancel on prompt
+        parseInt(passwordLength);                                                                                 // parses the string into a number                                                                                
         if(isNaN(passwordLength) || (passwordLength < 8 || passwordLength > 128)){                                                                                    //checks if the user entered faulty data (either NaN or a value outside of the 8-128 range)
           alert("Error: Either that wasn't between 8 and 128 or that wasn't even a number");
-          console.log(passwordLength);
           getPasswordLength();                                                                                                             // if the user did enter faulty data, the function recurssively calls itself
         }
-        console.log(passwordLength)
         return passwordLength;
-        
+      }
+      else {
+        return;
+      }
     };
 
 // Add event listener to generate button
