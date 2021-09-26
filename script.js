@@ -13,6 +13,7 @@
 //12. For each character in the desired password, randomly pick a character from the new unique list
 //13. Repeat step 12 'x' number of times where x is the number that the user gave us on line 5.
 //14. Display this generated password in the textarea.
+//OPTIONAL:
 //15. Make a button appear that says "copy".
 //16. If that copy button is clicked, copy that password to the user clipboard.
 //17. If the user pressed 'generate password' again, clear the textbox and go to step
@@ -93,7 +94,7 @@ function writePassword() {
 
     function getPasswordLength(){                                                                                                      //prompts the user for a password length
       passwordLength = prompt("How long do you want your password to be? Enter a number between 8 and 128","enter a number between 8 and 128"); //parses the user data into an integer or returns NaN if the user failed to enter a number
-      if(passwordLength !== null){                                                                                          // checks to make sure that the user didn't hit cancel on prompt
+      if(passwordLength !== null){                                                                                           // checks to make sure that the user didn't hit cancel on prompt
         parseInt(passwordLength);                                                                                 // parses the string into a number                                                                                
         if(isNaN(passwordLength) || (passwordLength < 8 || passwordLength > 128)){                                                                                    //checks if the user entered faulty data (either NaN or a value outside of the 8-128 range)
           alert("Error: Either that wasn't between 8 and 128 or that wasn't even a number");

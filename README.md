@@ -31,3 +31,5 @@ then it asks how long the user wants the password to be (between 8-12) and then 
 - [Link to LinkedIn](https://www.linkedin.com/in/emily-dorgan/)
 
 ## Acknowledgments
+
+* FreeCodeCamp lesson on spreading arrays using ...arr notation.
